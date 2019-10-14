@@ -1,0 +1,19 @@
+version: '3.4'
+services:
+  service:
+    build: ./service
+    restart: always
+    depends_on:
+     - rabbitmq
+  service_persist:
+    build: ./service_persist
+    restart: always
+    depends_on:
+     - rabbitmq
+  rabbitmq:
+    container_name: nameko.rabbit
+    image: rabbitmq:3-management
+    restart: always
+    ports:
+     - "15672:15672"
+     - "5672:5672"
