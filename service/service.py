@@ -1,5 +1,5 @@
 from nameko.rpc import rpc, RpcProxy
-import pdb
+
 
 class Compute(object):
     name = "compute"

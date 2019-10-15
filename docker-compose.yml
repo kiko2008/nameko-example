@@ -1,5 +1,14 @@
 version: '3.4'
 services:
+  api:
+    build: ./api
+    restart: always
+    ports:
+     - "5001:5000"
+    links:
+    - rabbitmq
+    - service
+    - service_persist
   service:
     build: ./service
     restart: always
@@ -16,4 +25,4 @@ services:
     restart: always
     ports:
      - "15672:15672"
-     - "5672:5672"
+     - "5671:5672"
