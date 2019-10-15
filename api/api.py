@@ -13,7 +13,7 @@ def compute():
         with ClusterRpcProxy(CONFIG) as rpc:
             # asynchronously spawning the compute task
             result = rpc.compute.compute_age(age)
-            # return msg, 200
+            # return msg, 200git status
         return msg, 200
     except Exception as e:
         return 'error %s' % e, 500
